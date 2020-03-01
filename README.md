@@ -8,6 +8,14 @@ Starter REST API service using NEST-TypeScript with postgres
 $ npm install
 ```
 
+## Before running the app
+
+Start the development environment:
+```bash
+$ docker-compose -f docker-compose/docker-compose.yml up
+```
+that includes Postgres database.
+
 ## Running the app
 
 ```bash
