@@ -12,6 +12,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
   // TODO replace with env variable
-  await app.listen(3000);
+  await app.listen(process.env.SERVER_PORT);
 }
 bootstrap();

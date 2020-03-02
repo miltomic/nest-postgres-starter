@@ -10,11 +10,18 @@ $ npm install
 
 ## Before running the app
 
-Start the development environment:
+**Start the development environment:**
 ```bash
-$ docker-compose -f docker-compose/docker-compose.yml up
+$ docker-compose -f env/dev/docker-compose/docker-compose.yml up
 ```
 that includes Postgres database.
+
+NOTE: *This is for development purposes only.*
+
+**Run database migrations**
+```bash
+$ npm run migration:run
+```
 
 ## Running the app
 
