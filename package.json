@@ -19,7 +19,8 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "migration:run": "npm run typeorm -- migration:run --config src/com/milan-tomic/config/database/ormconfig.ts"
+    "migration:run": "npm run typeorm -- migration:run --config src/com/milan-tomic/config/database/ormconfig.ts --transaction=each",
+    "migration:create": "npm run typeorm -- migration:create --config src/com/milan-tomic/config/database/ormconfig.ts"
   },
   "dependencies": {
     "@nestjs/common": "^6.10.14",

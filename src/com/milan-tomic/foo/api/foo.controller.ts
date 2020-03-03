@@ -20,7 +20,7 @@ export class FooController {
     type: FooDto
   })
   @Get()
-  getFoos(): Array<FooDto> {
-    return this.fooService.getFoos();
+  async getFoos(): Promise<FooDto[]> {
+    return await this.fooService.getFoos();
   }
 }

@@ -1,10 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { FooController } from './foo.controller';
 import { FooDto } from '../service/foo.dto';
-import { FooModule } from '../foo.module';
 
 // mocked services
-jest.mock('./foo.service')
+jest.mock('../service/foo.service')
 import { FooService } from '../service/foo.service';
 
 describe('FooController', () => {
@@ -25,7 +24,7 @@ describe('FooController', () => {
     it('should return sample Foo', () => {
       const mockedResult = [new FooDto('Mocked Foo')]
       fooService.getFoos.mockImplementationOnce(() => mockedResult)
-      expect(fooController.getFoos()).toStrictEqual(mockedResult);
+      expect(fooController.getFoos()).resolves.toStrictEqual(mockedResult);
     });
   });
 });

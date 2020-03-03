@@ -13,6 +13,8 @@ export class CreateFooTable1583093232657 implements MigrationInterface {
           name: 'id',
           type: 'int',
           isPrimary: true,
+          isGenerated: true,
+          generationStrategy: 'increment'
         },
         {
           name: 'name',
