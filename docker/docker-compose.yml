@@ -10,3 +10,9 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - ./postgres:/docker-entrypoint-initdb.d
+    networks:
+      - nestjs_starter_network
+networks:
+  nestjs_starter_network:
+
+

@@ -1,0 +1,25 @@
+version: '3'
+services:
+  nestjs_starter:
+    container_name: nestjs_starter
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    environment:
+      SERVER_PORT:  3000
+      DATABASE_HOST:  nest_starter_postgres
+      DATABASE_PORT:  5432
+      DATABASE_NAME:  nestjs_starter
+      DATABASE_USER:  nestjs_starter
+      DATABASE_PASSWORD:  nestjs_starter
+      DATABASE_SCHEMA_NAME: nestjs_starter
+    networks:
+      - nestjs_starter_network
+networks:
+  nestjs_starter_network:
+
+

@@ -1,6 +1,6 @@
 ## Description
 
-Starter REST API service using NEST-TypeScript with postgres
+Dockerized NEST - TypeORM REST API service using postgres.
 
 ## Installation
 
@@ -12,7 +12,7 @@ $ npm install
 
 **Start the development environment:**
 ```bash
-$ docker-compose -f env/dev/docker-compose/docker-compose.yml up
+$ docker-compose -f docker/docker-compose.yml up
 ```
 that includes Postgres database.
 
@@ -48,6 +48,16 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Deployment
+
+Sample [Dockerfile](docker/Dockerfile) is provided. If you want to build and run it just execute:
+```bash
+$ docker-compose -f docker/docker-compose.yml -f docker/docker-compose.nestjs.yml up
+```
+Above command will start up the required environment, run the migration command, and spin up the app.
+
+NOTE: *This approach is not suitable for microservices* which require migration to be handled independently.
 
 ## Stay in touch
 
